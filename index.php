@@ -10,7 +10,7 @@ include_once("./php/config.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./Javascripts/Fetch.js"></script>
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     
@@ -26,22 +26,24 @@ include_once("./php/config.php");
         //che successivamente eseguirà la query
         for($i=0;$i<10;$i++)
         {
-            echo '<div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
-              </div>
-              <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <form>
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="fname">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lname">
-              </form>
+ ?>          
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                   <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                </div>
+                <div class="flip-card-back">
+                   <h1>John Doe</h1>
+                   <form>
+                      <label for="fname">First Name</label>
+                      <input type="text" id="fname" name="fname">
+                      <label for="lname">Last Name</label>
+                      <input type="text" id="lname" name="lname">
+                   </form>
               </div>
             </div>
-          </div>';
+          </div>
+<?php
         }
     ?>
 </body>

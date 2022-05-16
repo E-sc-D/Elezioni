@@ -6,7 +6,7 @@
     //fai un array con i valori degli elementi che come chiave usano il nome della classe dei input.
     for (let i = 0; i < elements.length; i++) 
     {
-        values+=elements[i].className.split(" ")[1]+"="+values[i]+"&";//riempo un array indicizzato con il nome della classe  
+        values+=elements[i].className.split(" ")[1]+"="+values[i]+"&";//riempo un array che come chiave usa il nome della classe  
     } 
     return values.substring(0,values.length-1);
 }

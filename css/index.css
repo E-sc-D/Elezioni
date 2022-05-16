@@ -1,5 +1,6 @@
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
+.flip-card 
+{
     background-color: transparent;
     width: 40vh;
     height: 30vw;
@@ -8,7 +9,8 @@
   }
   
   /* This container is needed to position the front and back side */
-  .flip-card-inner {
+  .flip-card-inner 
+  {
     position: relative;
     width: 100%;
     height: 100%;
@@ -18,34 +20,37 @@
   }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
-  .flip-card:active .flip-card-inner {
-    transform: rotateY(180deg);
+  .flip-card:hover .flip-card-inner 
+  {
+    transform: rotateY(180deg); /*tenendo in considerazione i commenti sotto, se si gira il container del dietro e del davanti si inverte la situazione sbloccando la card dietro*/
   }
-  .card.is-flipped {
-    transform: rotateY(180deg);
-  }
+
   
   /* Position the front and back side */
-  .flip-card-front, .flip-card-back {
+  .flip-card-front, .flip-card-back /*entrambe le classi avranno le caratteristiche sottostanti*/
+  {
     position: absolute;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
+    backface-visibility: hidden;          /* impedisce il funzionamento di uno dei div se è girato (per esempio rotateY(180) lo gira) */
   }
   
   /* Style the front side (fallback if image is missing) */
-  .flip-card-front {
+  .flip-card-front 
+  {
     background-color: #bbb;
     color: black;
   }
   
   /* Style the back side */
-  .flip-card-back {
+  .flip-card-back 
+  {
     background-color: dodgerblue;
     color: white;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg);/*girando quella dietro rimane visibile quella davanti*/
   }
-  body{
+  body
+  {
       display: inline-flex;
   }
