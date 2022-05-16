@@ -1,0 +1,1 @@
+//controlla l'orario e decide se reindirizzare nella pagina di attesa o quella di statistica
