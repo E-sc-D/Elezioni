@@ -6,5 +6,5 @@ if (!$conn)
 }   
 else
 {
-  echo"Connection succed: ";
+  //console"Connection succed: ";
 }

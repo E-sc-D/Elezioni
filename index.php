@@ -17,13 +17,11 @@ include_once("./php/config.php");
 
     <?php
         //esegui la query per predere i partiti e i candidati
+        $query= "select count(partitopolitico.nome)
+                 From partitopolitico";
 
-        //for loop stampare le flip card
-
-
-        //fai il voto//flipcard generate con il php dei partiti con opzione di votazione multipla e blocco di altre votazioni
-        //premendo il tasto chiama la funzione call; controllando di aver riempito i dati a scopo statistico
-        //che successivamente eseguirà la query
+        //attraverso il for loop verranno stampate diverse flip card contenenti dei form, una volta compilato un form
+        //premendo il tasto il form chiama il php per eseguire la query !(pensavo di usare ajax "fetch.js" ma cosi elimina la possibilità di votazioni multiple)
         for($i=0;$i<10;$i++)
         {
  ?>          
@@ -34,7 +32,7 @@ include_once("./php/config.php");
                 </div>
                 <div class="flip-card-back">
                    <h1>John Doe</h1>
-                   <form>
+                   <form class="electionform">
                       <label for="fname">First Name</label>
                       <input type="text" id="fname" name="fname">
                       <label for="lname">Last Name</label>
