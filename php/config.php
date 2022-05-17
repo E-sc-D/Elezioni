@@ -1,10 +1,10 @@
 <?php
-$conn = new mysqli("localhost", "root" , "", "elezionifinali");
-if (!$conn) 
-{
-  echo"Connection failed: " . mysqli_connect_error();
-}   
-else
-{
-  //console"Connection succed: ";
-}
+$host = "localhost";
+$user = "root";
+$password = '';
+$db_name = "elezionifinali";
+
+$conn = mysqli_connect($host, $user, $password, $db_name);
+// Check connection
+if (!$conn) header('Location: ../index.php');
+?>

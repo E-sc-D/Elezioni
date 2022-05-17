@@ -1,11 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card 
 {
     background-color: transparent;
-    width: auto;
-    height: 30vw;
-    border: 1px solid #f1f1f1;
+    width: 94%;
+    height: 20vw;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    margin-top: 20px;
   }
   
   /* This container is needed to position the front and back side */
@@ -35,6 +41,7 @@
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;          /* impedisce il funzionamento di uno dei div se è girato (per esempio rotateY(180) lo gira) */
+    border-radius: 20px;
   }
   
   /* Style the front side (fallback if image is missing) */
@@ -47,7 +54,7 @@
   /* Style the back side */
   .flip-card-back 
   {
-    background-color: dodgerblue;
+    background-color: rgb(21, 83, 146);
     color: white;
     transform: rotateY(180deg);/*girando quella dietro rimane visibile quella davanti*/
   }
@@ -57,11 +64,47 @@
       grid-template-columns: repeat(4, 25vw);
       gap: 0px;
       overflow: none;
+      background-image: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../img/background.jpg");
+      backdrop-filter: blur(10px);
   }
 
   .electionform
   {
     position:relative;
     height: 100%;
-    width: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    left: 15%;
+    top: 5%;
+    align-items: center;
+  }
+
+  .electionform button{
+    width: 200px;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(21, 83, 146);
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .electionform button:hover{
+    background-color: rgb(170, 170, 170);
+  }
+
+  .electionform select{
+    width: 200px;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(21, 83, 146);
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .electionform label{
+    font-size: 20px;
   }

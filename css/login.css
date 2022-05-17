@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+html 
+{
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../img/background1.jpg");
+}
+body 
+{
+    min-height: 100;
+}
+
+.pino{
+    width: 40%;
+    height: 500px;
+    margin-top: 10%;
+    margin-left: 30%;
+    background-color: rgba(189, 189, 189, 0.822);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pino h1{
+    font-size: 30px;
+    color: rgb(21, 83, 146);
+    padding: 20px;
+}
+
+.pino h2{
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(21, 83, 146);
+    margin-bottom: 40px;
+}
+
+.pino input{
+    width: 400px;
+    font-size: 40px;
+    font-weight: 600;
+    color: rgb(21, 83, 146);
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.pino button{
+    width: 200px;
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(21, 83, 146);
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.pino button:hover{
+    background-color: rgb(197, 197, 197);
+}

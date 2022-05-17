@@ -1,35 +1,33 @@
 <?php
-//$_POST["gender"];
-//$_POST["pin"];
-//$_POST["age"];
+    require_once "config.php";
 
-//check pin
-//salvataggio dati 
-//accesso alla pagina di voto
-//avvio tramite javascript del savataggio del voto
-
-if(!isset($_POST["pin"]))//se non esiste pin allora esci
-{
-    header("Location: login.html?error=direct access");
-    die();
-}
+    if(!isset($_POST["pin"]))//se non esiste pin allora esci
+    {
+        header("Location: login.html?error=direct access");
+        die();
+    }
 
     //chiediamo al database se il pin esiste:controlla se esiste una scheda elettorale con quel pin
-    $userRequest = "SELECT Indirizzo,Password,Admin,CodiceFiscale FROM `utente` WHERE Indirizzo like '" . $user . "';";
+    $userRequest = "SELECT pin FROM see";
     $userdata = mysqli_query($conn, $userRequest);
+    $no = 1;
 
-if (!$userdata) //verifichiamo l'esito della query
-{
-    print_r(mysqli_error($conn));
-}
+    while ($record = mysqli_fetch_assoc($userdata))
+    {
+        if($record["pin"] == $_POST["pin"])
+        {
+            $no = 0;
+            header("location: ../index.php");
+        }
+    }
 
-    $userdata  = mysqli_fetch_array($userdata, MYSQLI_ASSOC);//i dati vengono estratti
-//controlliamo se il database ha restituito qualcosa
-if (gettype($userdata) === "NULL") //se non ha dato niente allora significa che non esiste
-{
-    header("Location: login.html?errore=email inesistente");//controllo se la see è gia compilata oppure no.
-    die();
-}
+    if($no == 1)
+    {
+        header("location: ../login.html");
+    }
 
+    mysqli_free_result($result);
 
+    mysqli_close($conn);
 
+?>

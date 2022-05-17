@@ -1,11 +1,22 @@
-//viene controllata la provenienza e la esistenza dei dati
-//viene organizzata una query
-//viene eseguita 
-//comunicazione dell'esito
 <?php
-include_once("./php/config.php");
-include_once("./php/checklogin.php");
+require_once "config.php";
 
-$query="INSERT INTO table_name (column1, column2, column3, ...)
-VALUES (value1, value2, value3, ...);"
+$query="INSERT INTO voto (codiceFiscale1, codiceFiscale2, codicePartito) VALUES (NULL, NULL, '".$_POST["partito"]."')";
+
+if($_POST["cand1"] != "no" && $_POST["cand2"] != "no")
+{
+    $query="INSERT INTO voto (codiceFiscale1, codiceFiscale2, codicePartito) VALUES ('".$_POST["cand1"]."','".$_POST["cand2"]."','".$_POST["partito"]."')";
+}
+elseif($_POST["cand1"] != "no" && $_POST["cand2"] == "no"){
+    $query="INSERT INTO voto (codiceFiscale1, codiceFiscale2, codicePartito) VALUES ('".$_POST["cand1"]."',NULL,'".$_POST["partito"]."')";
+}
+elseif($_POST["cand1"] == "no" && $_POST["cand2"] != "no"){
+    $query="INSERT INTO voto (codiceFiscale1, codiceFiscale2, codicePartito) VALUES (NULL, '".$_POST["cand2"]."','".$_POST["partito"]."')";
+}
+
+$result = mysqli_query($conn, $query);
+
+header("location: ../login.html");
+
+mysqli_close($conn);
 ?>
